@@ -6,8 +6,10 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object TestConnection {
 
+  //local cassandra host
   val cassandraHost = "127.0.0.1"
 
+  //use spark rdd load cassandra data
   def useRDD() = {
 
     val conf = new SparkConf(true)
@@ -25,6 +27,7 @@ object TestConnection {
     sc.stop()
   }
 
+  //use spark data frame load cassandra data
   def useDF() = {
 
     val conf = new SparkConf(true)
@@ -46,6 +49,7 @@ object TestConnection {
     sc.stop()
   }
 
+  //use spark data set load cassandra data
   def useDS ={
 
     val conf = new SparkConf().set("spark.cassandra.connection.host", cassandraHost)
