@@ -25,4 +25,5 @@ object RddCassandra {
 
 }
 
-case class busData(CARDID: String, LINEID: Int, BEGINTIME: BigInt, ENDTIME: BigInt, STATIONFROM: Int, STATIONTO: Int, BUSID: Int)
+//case class busData(CARDID: String, LINEID: Int, BEGINTIME: BigInt, ENDTIME: BigInt, STATIONFROM: Int, STATIONTO: Int, BUSID: Int)
+

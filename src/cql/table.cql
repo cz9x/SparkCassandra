@@ -12,3 +12,10 @@ create table analysis.bus_data(
    ,BUSID INT
 );
 
+create table analysis.bus_data2(
+    ID INT primary key
+   ,BUSID INT
+   ,CARDID TEXT
+   ,STATIONFROM INT
+   ,STATIONTO INT
+);
