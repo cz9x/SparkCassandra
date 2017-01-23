@@ -67,12 +67,12 @@ object DateUtils {
   }
 
   //获取上一周
-  def getWeek2(): String ={
+  def getLastWeek(): String ={
     val cal: Calendar = Calendar.getInstance()
-    cal.setTime(new Date())
-    val week = cal.get(Calendar.WEEK_OF_YEAR) -1
-    val f: Format = new DecimalFormat("00")
-    f.format(week)
+    cal.add(Calendar.WEEK_OF_YEAR, -1)
+    val dateFormat: SimpleDateFormat = new SimpleDateFormat("WW")
+    val week = dateFormat.format(cal.getTime)
+    week
   }
 
   //获取当前月
@@ -94,11 +94,19 @@ object DateUtils {
     f.format(Integer.parseInt(month))
   }
 
+  //获取当前年
+  def getYead(): String ={
+    val cal: Calendar = Calendar.getInstance()
+    val dateFormat: SimpleDateFormat = new SimpleDateFormat("yyyy")
+    val year = dateFormat.format(cal.getTime)
+    year
+  }
+
 
   def main(args: Array[String]): Unit = {
-//    println(getNowDate())
-    println(getMonth2())
+    println(getLastWeek())
     println(getWeek())
+//    println(getWeek())
   }
 
 }
