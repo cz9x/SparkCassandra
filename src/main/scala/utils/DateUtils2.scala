@@ -9,11 +9,11 @@ import java.util.{Calendar, Date}
   */
 object DateUtils2 {
   //返回一小时前日期
-  def getLastHour(date: Date): String ={
+  def getLastHour(date: Date, num: Int): String ={
     val dateFormat: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     val cal: Calendar = Calendar.getInstance()
     cal.setTime(date)
-    cal.add(Calendar.HOUR, -1)
+    cal.add(Calendar.HOUR, num)
     val result = dateFormat.format(cal.getTime)
     result
   }
@@ -68,7 +68,8 @@ object DateUtils2 {
 
   def main(args: Array[String]): Unit = {
     val date1 = "2016-12-31 23:00:00"
-    val result = splitDate(date1)
-    println(result("week"))
+    val date = new Date()
+    val result = getLastHour(date, -2)
+    println(result)
   }
 }
